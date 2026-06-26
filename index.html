@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sourish Dutta | Portfolio</title>
+  <meta name="description" content="Sourish Dutta — Creative problem solver building at the intersection of finance, business, and AI." />
+  <meta name="author" content="Sourish Dutta" />
+  <meta property="og:title" content="Sourish Dutta | Portfolio" />
+  <meta property="og:description" content="Creative problem solver building at the intersection of finance, business, and AI." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --surface: #fbf9f7;
+      --surface-dim: #dbdad8;
+      --surface-bright: #fbf9f7;
+      --surface-container-lowest: #ffffff;
+      --surface-container-low: #f5f3f1;
+      --surface-container: #efedeb;
+      --surface-container-high: #eae8e6;
+      --surface-container-highest: #e4e2e0;
+      --on-surface: #1b1c1b;
+      --on-surface-variant: #434844;
+      --outline: #737874;
+      --outline-variant: #c3c8c2;
+      --primary: #06150e;
+      --on-primary: #ffffff;
+      --primary-fixed: #d5e7da;
+      --on-primary-fixed: #101f17;
+      --secondary: #96482d;
+      --secondary-container: #fd9a78;
+      --on-secondary-container: #763017;
+      --tertiary: #1f0e0e;
+      --container-max: 1280px;
+      --margin-mobile: 20px;
+      --margin-desktop: 64px;
+      --section-mobile: 80px;
+      --section-desktop: 160px;
+      --font-display: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+      --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; border-color: var(--outline-variant); }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--surface);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    ::selection { background: #ffdbd0; color: #390c00; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font: inherit; }
+
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { width: 100%; max-width: var(--container-max); margin: 0 auto; padding: 0 var(--margin-mobile); }
+    .section { padding: var(--section-mobile) 0; }
+    .section-lg { padding: var(--section-mobile) 0; }
+    .glass-card { background: rgba(255,255,255,.6); backdrop-filter: blur(24px); border: 1px solid rgba(27,28,27,.08); }
+    .eyebrow { display: block; margin-bottom: 16px; color: var(--secondary); font-size: 14px; line-height: 20px; letter-spacing: .05em; font-weight: 700; text-transform: uppercase; }
+    .text-display { font-family: var(--font-display); font-size: 40px; line-height: 1.08; font-weight: 600; letter-spacing: 0; }
+    .text-headline-lg { font-family: var(--font-display); font-size: 32px; line-height: 40px; font-weight: 500; letter-spacing: 0; }
+    .text-headline-md { font-family: var(--font-display); font-size: 28px; line-height: 36px; font-weight: 500; letter-spacing: 0; }
+    .body-lg { font-size: 18px; line-height: 28px; }
+    .body-md { font-size: 16px; line-height: 24px; }
+    .label { font-size: 14px; line-height: 20px; letter-spacing: .05em; font-weight: 700; }
+    .muted { color: var(--on-surface-variant); }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      background: rgba(251,249,247,.7);
+      border-bottom: 1px solid rgba(195,200,194,.3);
+      backdrop-filter: blur(24px);
+      padding: 16px 0;
+      transition: padding .3s ease, background .3s ease, box-shadow .3s ease;
+      animation: navIn .7s cubic-bezier(.22,1,.36,1) both;
+    }
+    .nav.scrolled { padding: 8px 0; background: rgba(251,249,247,.95); box-shadow: 0 1px 10px rgba(0,0,0,.04); }
+    @keyframes navIn { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); } }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-family: var(--font-display); font-size: 28px; line-height: 36px; font-weight: 700; }
+    .nav-links { display: none; align-items: center; gap: 32px; }
+    .nav-link { position: relative; color: var(--on-surface-variant); transition: color .25s ease; }
+    .nav-link:hover { color: var(--primary); }
+    .nav-link::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--primary); transition: width .3s ease; }
+    .nav-link:hover::after { width: 100%; }
+    .nav-actions { display: flex; align-items: center; gap: 12px; margin-left: 16px; }
+    .button-primary, .button-outline, .button-secondary {
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 8px; font-size: 14px; line-height: 20px; letter-spacing: .05em; font-weight: 700;
+      transition: transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+    }
+    .button-primary { background: var(--primary); color: var(--on-primary); padding: 14px 28px; box-shadow: 0 14px 30px rgba(6,21,14,.12); }
+    .button-primary:hover { transform: translateY(-2px); background: rgba(6,21,14,.92); }
+    .button-outline { border: 2px solid var(--secondary); color: var(--secondary); padding: 12px 28px; }
+    .button-outline:hover { transform: translateY(-2px); background: rgba(150,72,45,.05); }
+    .button-secondary { background: var(--secondary); color: white; padding: 22px 48px; font-family: var(--font-display); font-size: 28px; line-height: 36px; font-weight: 500; box-shadow: 0 20px 40px rgba(150,72,45,.18); }
+    .button-secondary:hover { transform: translateY(-3px); background: rgba(150,72,45,.92); }
+    .nav .small-primary { padding: 10px 24px; }
+    .nav .small-outline { border: 1px solid var(--outline); color: var(--on-surface); padding: 10px 24px; }
+    .nav .small-outline:hover { background: var(--surface-container-high); transform: translateY(0); }
+    .menu-button { display: inline-flex; border: 0; background: transparent; color: var(--on-surface); padding: 8px; cursor: pointer; }
+    .mobile-menu { display: none; flex-direction: column; gap: 16px; padding: 16px var(--margin-mobile) 24px; border-top: 1px solid rgba(195,200,194,.3); }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--on-surface-variant); padding: 8px 0; }
+    .mobile-menu .button-primary { color: white; text-align: center; padding: 12px 24px; }
+
+    .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 96px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; width: 100%; }
+    .hero h1 { margin: 0 0 24px; }
+    .hero p { max-width: 620px; margin: 0 0 40px; color: var(--on-surface-variant); }
+    .hero .accent { color: var(--secondary); font-weight: 800; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
+    .portrait-wrap { position: relative; animation: softIn 1s .2s cubic-bezier(.22,1,.36,1) both; }
+    @keyframes softIn { from { opacity: 0; transform: scale(.95); } to { opacity: 1; transform: scale(1); } }
+    .portrait-card { aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; padding: 8px; box-shadow: 0 25px 60px rgba(0,0,0,.12); }
+    .portrait-card img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+    .ambient { position: absolute; z-index: -1; border-radius: 999px; filter: blur(56px); animation: pulse 9s ease-in-out infinite; }
+    .ambient.one { width: 256px; height: 256px; top: -48px; right: -48px; background: rgba(255,219,208,.42); }
+    .ambient.two { width: 192px; height: 192px; bottom: -48px; left: -48px; background: rgba(6,21,14,.1); animation-delay: 1s; }
+    @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+
+    .about { background: var(--surface-container-lowest); }
+    .about-grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: start; }
+    .about-copy { display: grid; gap: 24px; color: var(--on-surface-variant); }
+    .about-copy p { margin: 0; }
+
+    .approach-header { text-align: center; margin-bottom: 64px; }
+    .card-grid-five { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .approach-card, .skill-card, .project-card, .vision-card { border-radius: 12px; transition: transform .3s ease, box-shadow .3s ease; }
+    .approach-card { padding: 32px; border-top: 2px solid var(--primary); }
+    .approach-card:hover, .skill-card:hover, .project-card:hover, .social:hover { transform: translateY(-5px); }
+    .approach-number { display: block; margin-bottom: 16px; font-family: var(--font-display); font-size: 48px; line-height: 56px; color: rgba(6,21,14,.1); font-weight: 500; }
+    .approach-card h3, .skill-card h4 { margin: 0 0 8px; }
+    .approach-card p, .skill-card p { margin: 0; color: var(--on-surface-variant); }
+
+    .education { background: var(--surface-container-low); overflow: hidden; }
+    .education h2 { margin: 0 0 64px; }
+    .timeline { position: relative; display: grid; gap: 64px; }
+    .timeline::before { content: ""; position: absolute; left: 16px; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--outline-variant), var(--primary), var(--outline-variant)); }
+    .timeline-item { position: relative; display: grid; grid-template-columns: 1fr; padding-left: 48px; }
+    .timeline-dot { position: absolute; left: 16px; top: 0; width: 32px; height: 32px; transform: translateX(-50%); border-radius: 999px; background: var(--surface); border: 4px solid var(--primary); z-index: 1; }
+    .timeline-dot.accent { border-color: var(--secondary); box-shadow: 0 8px 24px rgba(150,72,45,.25); }
+    .timeline-left { display: none; }
+    .timeline-right .tag { display: inline-block; border-radius: 4px; padding: 4px 12px; background: var(--primary-fixed); color: var(--on-primary-fixed); text-transform: uppercase; }
+    .timeline-right .tag.accent { background: var(--secondary-container); color: var(--on-secondary-container); }
+    .timeline-right h3 { margin: 8px 0 0; }
+    .timeline-right p { margin: 8px 0 0; max-width: 380px; }
+
+    .skills h2 { margin: 0 0 48px; }
+    .skills-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .skill-card { padding: 24px; border: 1px solid var(--outline-variant); }
+    .skill-card .material-symbols-outlined { color: var(--secondary); font-size: 32px; margin-bottom: 16px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-chip { display: inline-flex; border-radius: 4px; border: 1px solid rgba(195,200,194,.5); background: var(--surface-container); color: var(--on-surface-variant); padding: 4px 12px; font-size: 13px; font-weight: 700; letter-spacing: .05em; }
+
+    .projects { background: var(--primary); color: var(--on-primary); }
+    .projects-header { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 64px; }
+    .projects .eyebrow { color: var(--secondary-container); }
+    .projects-header p { max-width: 380px; color: var(--surface-container-highest); opacity: .8; margin: 0; }
+    .project-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .feature-project { position: relative; min-height: 400px; overflow: hidden; border-radius: 12px; background: var(--surface-container-highest); }
+    .feature-project-bg { position: absolute; inset: 0; background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCp1MnmchQujcdfdQXZSS4Xg5T9KXLe-iefTaWhutw7paz8LYY6jbxzOB2kcQpj4omnnuCfQk5XgAstTzgI5cFTMnIaUo0FYeorRSpIVPjqXJxnKzXT1Ey_FV3SQhjXft7GRDOo4dF63EFzztU8FAGJKe9mRynBuY9X2IzBehnEGpWAukymptTLzAf411ZWYv7mEHJbzI9PxFdeoRq7GRmAfLjChzkf2U7FBDWMlZe0RAmClFkAzn3UOOx2YwKCvPrFYTr4r2bIpDM"); background-size: cover; background-position: center; transition: transform 1.2s ease; }
+    .feature-project:hover .feature-project-bg { transform: scale(1.1); }
+    .feature-project-content { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; background: linear-gradient(to top, rgba(6,21,14,.9), rgba(6,21,14,.3), transparent); }
+    .project-label { display: inline-flex; width: fit-content; margin-bottom: 16px; border-radius: 4px; background: rgba(251,249,247,.9); color: var(--primary); padding: 4px 12px; backdrop-filter: blur(12px); }
+    .feature-project h3 { margin: 0 0 8px; }
+    .feature-project p { max-width: 440px; margin: 0; color: var(--surface-container-highest); }
+    .project-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 32px; backdrop-filter: blur(24px); }
+    .project-card h4 { color: white; margin: 0 0 8px; }
+    .project-card p { color: var(--surface-container-highest); margin: 0; }
+    .project-card .material-symbols-outlined { color: var(--secondary-container); font-size: 40px; margin-bottom: 24px; }
+    .project-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 32px; color: var(--secondary-container); transition: gap .25s ease; }
+    .project-link:hover { gap: 16px; }
+    .concept-label { display: inline-flex; border: 1px solid rgba(255,255,255,.2); border-radius: 4px; color: var(--surface-container-highest); padding: 4px 12px; }
+    .next-frontier { background: var(--surface-container-low); color: var(--on-surface); border: 1px solid rgba(195,200,194,.2); border-radius: 12px; padding: 40px; display: flex; justify-content: space-between; align-items: center; }
+    .next-frontier h4 { margin: 0 0 16px; color: var(--primary); }
+    .next-frontier p { margin: 0; color: var(--on-surface-variant); max-width: 460px; }
+    .spinner { display: none; width: 128px; height: 128px; border-radius: 50%; border: 4px solid var(--surface-container-highest); border-top-color: var(--secondary); animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .companies { background: var(--surface); text-align: center; }
+    .companies h2 { margin: 0; }
+    .companies .intro { margin: 16px 0 64px; color: var(--on-surface-variant); }
+    .company-list { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 48px; }
+    .company { text-align: center; opacity: .6; filter: grayscale(1); transition: opacity .25s ease, filter .25s ease, transform .25s ease; }
+    .company:hover { opacity: 1; filter: grayscale(0); transform: scale(1.05); }
+    .company h3 { margin: 0; transition: color .25s ease; }
+    .company:hover h3 { color: var(--secondary); }
+    .company p { margin: 0; color: var(--on-surface-variant); }
+
+    .vision { background: var(--surface-container-high); }
+    .vision-grid { display: grid; grid-template-columns: 1fr; gap: 64px; }
+    .vision h2 { margin: 0 0 32px; }
+    .vision-stack { display: grid; gap: 24px; }
+    .vision-item { display: flex; gap: 16px; }
+    .vision-item .material-symbols-outlined { color: var(--secondary); margin-top: 4px; }
+    .vision-item h4 { margin: 0; }
+    .vision-item p { margin: 0; color: var(--on-surface-variant); }
+    .vision-card { padding: 32px; border: 1px solid rgba(255,255,255,.6); box-shadow: 0 20px 45px rgba(0,0,0,.08); }
+    .vision-card blockquote { margin: 0 0 24px; color: var(--on-surface-variant); font-style: italic; }
+    .hobby-icons { display: flex; gap: 16px; }
+    .hobby-icon { width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: var(--surface-container-highest); border: 1px solid var(--outline-variant); }
+
+    .contact { position: relative; overflow: hidden; text-align: center; }
+    .contact h2 { margin: 0 0 32px; }
+    .contact p { max-width: 680px; margin: 0 auto 48px; color: var(--on-surface-variant); }
+    .socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; margin-bottom: 64px; }
+    .social { width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 999px; border: 1px solid var(--outline-variant); transition: transform .25s ease, color .25s ease, background .25s ease; }
+    .social:hover { background: var(--secondary); color: white; }
+    .contact-ambient { position: absolute; top: 50%; left: 50%; width: 800px; height: 800px; transform: translate(-50%,-50%); z-index: -1; background: rgba(150,72,45,.05); border-radius: 999px; filter: blur(120px); animation: breathe 12s ease-in-out infinite; }
+    @keyframes breathe { 0%,100% { opacity: .5; transform: translate(-50%,-50%) scale(1); } 50% { opacity: .8; transform: translate(-50%,-50%) scale(1.2); } }
+
+    .footer { padding: 48px 0; background: var(--surface-container-low); border-top: 1px solid var(--outline-variant); }
+    .footer-inner { display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 24px; }
+    .footer h2 { margin: 0; font-weight: 700; }
+    .footer p { margin: 4px 0 0; color: var(--on-surface-variant); }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+    .footer-links a { color: var(--on-surface-variant); transition: color .25s ease; }
+    .footer-links a:hover { color: var(--secondary); }
+    .copyright { opacity: .6; text-align: center; }
+
+    @media (min-width: 768px) {
+      .container { padding: 0 var(--margin-desktop); }
+      .section, .section-lg { padding: var(--section-desktop) 0; }
+      .text-display { font-size: 64px; line-height: 72px; }
+      .text-headline-lg { font-size: 48px; line-height: 56px; }
+      .nav-links { display: flex; }
+      .menu-button { display: none; }
+      .hero-grid { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+      .about-grid { grid-template-columns: 4fr 8fr; }
+      .card-grid-five { grid-template-columns: repeat(3, 1fr); }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .timeline::before { left: 50%; }
+      .timeline-item { grid-template-columns: 1fr 1fr; padding-left: 0; align-items: center; }
+      .timeline-item.reverse .timeline-left { grid-column: 2; text-align: left; padding-left: 48px; }
+      .timeline-item.reverse .timeline-right { grid-column: 1; grid-row: 1; text-align: right; padding-right: 48px; }
+      .timeline-dot { left: 50%; }
+      .timeline-left { display: block; text-align: right; padding-right: 48px; }
+      .timeline-left h3 { margin: 0; color: var(--primary); }
+      .timeline-left p { margin: 0; color: var(--on-surface-variant); }
+      .timeline-right { padding-left: 48px; }
+      .timeline-right .mobile-school { display: none; }
+      .projects-header { flex-direction: row; align-items: flex-end; justify-content: space-between; }
+      .project-grid { grid-template-columns: repeat(12, 1fr); }
+      .feature-project { grid-column: span 8; }
+      .project-card.dashboard { grid-column: span 4; display: flex; flex-direction: column; justify-content: space-between; }
+      .project-card.concept { grid-column: span 6; }
+      .next-frontier { grid-column: span 6; }
+      .spinner { display: block; }
+      .vision-grid { grid-template-columns: 1fr 1fr; }
+      .footer-inner { flex-direction: row; align-items: center; }
+      .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 16px; }
+      .copyright { text-align: right; }
+    }
+
+    @media (min-width: 1024px) {
+      .card-grid-five { grid-template-columns: repeat(5, 1fr); }
+      .skills-grid { grid-template-columns: repeat(4, 1fr); }
+      .project-card.concept { grid-column: span 4; }
+      .next-frontier { grid-column: span 8; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">Sourish Dutta</a>
+      <div class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link body-md" href="#work">Work</a>
+        <a class="nav-link body-md" href="#about">About</a>
+        <a class="nav-link body-md" href="#contact">Contact</a>
+        <div class="nav-actions">
+          <a class="button-primary small-primary" href="https://www.linkedin.com/in/sourish-dutta-b747193b6" target="_blank" rel="noreferrer">Connect</a>
+          <a class="button-outline small-outline" href="#top">Download CV</a>
+        </div>
+      </div>
+      <button class="menu-button" id="menuButton" aria-label="Toggle menu" aria-expanded="false">
+        <span class="material-symbols-outlined" id="menuIcon">menu</span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="button-primary" href="https://www.linkedin.com/in/sourish-dutta-b747193b6" target="_blank" rel="noreferrer">Connect</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <h1 class="text-display">Sourish Dutta</h1>
+          <p class="text-headline-lg">Creative Problem Solver Building at the Intersection of <span class="accent">Finance, Business &amp; AI</span>.</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="#work">Explore My Work</a>
+            <a class="button-outline" href="#contact">Connect With Me</a>
+          </div>
+        </div>
+        <div class="portrait-wrap">
+          <div class="portrait-card glass-card">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8WTfcvU_oBdFmYhvkj3qBYbhFTRnBdJePtkADfH5bucT7eNgDHP5ITxv7MA2a9zNtvYezTxxl0NJCDHtZDKyawtloT_XHwr7Gnrz-Nr0K5ZHdZGgXJZkCldU22JSadcVn6MGDV834NScMChIVGnQQJZiN1n_HnfJqjraqGzvuxfe3jp296wBicM2BgQjlqKRlsmrLNH9I7oqD9rjpGkENodYbgqkcH_Wj-buxJmdxO7wMb4O5LAHedJrv61WU0yEnJxovt0EbHJY" alt="Sourish Dutta portrait" loading="eager" />
+          </div>
+          <div class="ambient one"></div>
+          <div class="ambient two"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <span class="eyebrow">The Narrative</span>
+          <h2 class="text-headline-lg">Curiosity Driven, Outcome Focused</h2>
+        </div>
+        <div class="about-copy body-lg reveal">
+          <p>Sourish Dutta is a commerce student exploring the intersection of finance, technology, and artificial intelligence. Driven by a builder mindset, he doesn't just study markets and systems—he creates solutions that bridge the gap between complex financial concepts and practical digital tools.</p>
+          <p>With a foundation in rigorous academic training and a relentless curiosity for emerging technologies, Sourish seeks to demystify technical barriers for businesses. His work is characterized by a "calm, intentional precision," aiming for the level of craftsmanship often seen in high-end product ecosystems.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section approach">
+      <div class="container">
+        <div class="approach-header reveal">
+          <span class="eyebrow">Process</span>
+          <h2 class="text-headline-lg">My Strategic Approach</h2>
+        </div>
+        <div class="card-grid-five">
+          <article class="approach-card glass-card reveal"><span class="approach-number">01</span><h3 class="text-headline-md">Understand</h3><p class="body-md">Deeply analyzing the core problem and user needs before writing a single line of code.</p></article>
+          <article class="approach-card glass-card reveal"><span class="approach-number">02</span><h3 class="text-headline-md">Research</h3><p class="body-md">Studying market trends, competitor landscapes, and the latest in AI and tech feasibility.</p></article>
+          <article class="approach-card glass-card reveal"><span class="approach-number">03</span><h3 class="text-headline-md">Plan</h3><p class="body-md">Architecting data flows and UI layouts to ensure a seamless, premium user experience.</p></article>
+          <article class="approach-card glass-card reveal"><span class="approach-number">04</span><h3 class="text-headline-md">Technology</h3><p class="body-md">Selecting the optimal stack—from Kotlin for mobile to AI models for intelligence.</p></article>
+          <article class="approach-card glass-card reveal"><span class="approach-number">05</span><h3 class="text-headline-md">Build</h3><p class="body-md">Executing with precision, iterative testing, and a focus on high-fidelity details.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section education">
+      <div class="container">
+        <h2 class="text-headline-lg reveal">Education &amp; Evolution</h2>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-left"><h3 class="text-headline-md">Ananda Marga School</h3><p>Early Education Foundation</p></div>
+            <div class="timeline-right"><span class="tag label">Early Years</span><h3 class="mobile-school text-headline-md">Ananda Marga School</h3><p>Cultivating discipline and the initial spark of intellectual curiosity.</p></div>
+          </article>
+          <article class="timeline-item reverse reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-left"><h3 class="text-headline-md">Calcutta Boys' School</h3><p>Secondary &amp; Higher Secondary</p></div>
+            <div class="timeline-right"><span class="tag label">Core Academics</span><h3 class="mobile-school text-headline-md">Calcutta Boys' School</h3><p>Rigorous focus on Science, Mathematics, and Commerce fundamentals.</p></div>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-left"><h3 class="text-headline-md">Umeschandra College</h3><p>B.Com Honours</p></div>
+            <div class="timeline-right"><span class="tag label">Undergraduate</span><h3 class="mobile-school text-headline-md">Umeschandra College</h3><p>Specializing in financial accounting, auditing, and corporate laws.</p></div>
+          </article>
+          <article class="timeline-item reverse reveal">
+            <span class="timeline-dot accent"></span>
+            <div class="timeline-left"><h3 class="text-headline-md">E&amp;ICT IIT Roorkee X Masai</h3><p>AI &amp; Data Science Program</p></div>
+            <div class="timeline-right"><span class="tag accent label">Specialization</span><h3 class="mobile-school text-headline-md">E&amp;ICT IIT Roorkee X Masai</h3><p><strong>Advanced certification focusing on the practical application of AI in industry.</strong></p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills">
+      <div class="container">
+        <h2 class="text-headline-lg reveal">Technical Arsenal</h2>
+        <div class="skills-grid">
+          <article class="skill-card glass-card reveal"><span class="material-symbols-outlined">account_balance</span><h4 class="text-headline-md">Finance &amp; Accounting</h4><div class="tags"><span class="tag-chip">ANALYSING</span><span class="tag-chip">GST</span><span class="tag-chip">TALLY PRIME</span><span class="tag-chip">FINANCIAL ANALYSIS</span></div></article>
+          <article class="skill-card glass-card reveal"><span class="material-symbols-outlined">analytics</span><h4 class="text-headline-md">Data &amp; Analytics</h4><div class="tags"><span class="tag-chip">PYTHON</span><span class="tag-chip">ADVANCED EXCEL</span><span class="tag-chip">SQL</span><span class="tag-chip">POWER BI</span></div></article>
+          <article class="skill-card glass-card reveal"><span class="material-symbols-outlined">neurology</span><h4 class="text-headline-md">AI &amp; Technology</h4><div class="tags"><span class="tag-chip">KOTLIN</span><span class="tag-chip">JETPACK COMPOSE</span><span class="tag-chip">LLM PROMPTING</span><span class="tag-chip">APP ARCHITECTURE</span></div></article>
+          <article class="skill-card glass-card reveal"><span class="material-symbols-outlined">strategy</span><h4 class="text-headline-md">Business Strategy</h4><div class="tags"><span class="tag-chip">MARKET RESEARCH</span><span class="tag-chip">PRODUCT DEV</span><span class="tag-chip">TECH STRATEGY</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="work">
+      <div class="container">
+        <div class="projects-header reveal">
+          <div><span class="eyebrow">Portfolio</span><h2 class="text-headline-lg">Building the Future</h2></div>
+          <p>A collection of built applications and upcoming experiments in finance and automation.</p>
+        </div>
+        <div class="project-grid">
+          <article class="feature-project reveal"><div class="feature-project-bg"></div><div class="feature-project-content"><span class="project-label label">MOBILE APP</span><h3 class="text-headline-lg">ZeroBook</h3><p class="body-md">An intuitive invoicing app for small-scale retailers. Built with Kotlin and Jetpack Compose.</p></div></article>
+          <article class="project-card dashboard reveal"><div><span class="material-symbols-outlined">dashboard</span><h4 class="text-headline-md">Financial Dashboards</h4><p>Exploring complex data visualization using Power BI and custom Python scripts.</p></div><a class="project-link label" href="#work">VIEW RESEARCH <span class="material-symbols-outlined">arrow_forward</span></a></article>
+          <article class="project-card concept reveal"><span class="concept-label label">CONCEPT</span><h4 class="text-headline-md" style="margin-top:24px;">AI Auditor</h4><p>An experiment in using LLMs to automate basic accounting discrepancy checks for Indian GST compliance.</p></article>
+          <article class="next-frontier reveal"><div><h4 class="text-headline-lg">The Next Frontier</h4><p>Currently exploring cross-platform development for high-frequency trading visualization tools.</p></div><div class="spinner" aria-hidden="true"></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section companies">
+      <div class="container">
+        <h2 class="text-headline-lg reveal">Companies I Study</h2>
+        <p class="intro body-lg reveal">Analyzing market leaders to understand operational excellence and brand power.</p>
+        <div class="company-list">
+          <article class="company reveal"><h3 class="text-headline-md">Apple</h3><p class="label">PRICING STRATEGY</p></article>
+          <article class="company reveal"><h3 class="text-headline-md">Tesla</h3><p class="label">INNOVATION SPEED &amp; MARKETING</p></article>
+          <article class="company reveal"><h3 class="text-headline-md">Google</h3><p class="label">DATA ARCHITECTURE</p></article>
+          <article class="company reveal"><h3 class="text-headline-md">Samsung</h3><p class="label">LARGE SCALE DISTRIBUTION &amp; MARKETING</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section vision">
+      <div class="container vision-grid">
+        <div class="reveal">
+          <h2 class="text-headline-lg">Career Vision</h2>
+          <div class="vision-stack">
+            <div class="vision-item"><span class="material-symbols-outlined">rocket_launch</span><div><h4 class="text-headline-md">AI Strategy</h4><p class="body-md">Bridging the gap between corporate finance and autonomous machine intelligence to drive efficiency.</p></div></div>
+            <div class="vision-item"><span class="material-symbols-outlined">view_quilt</span><div><h4 class="text-headline-md">Product Management</h4><p class="body-md">Leading technical teams to build products that are as beautiful as they are functional.</p></div></div>
+          </div>
+        </div>
+        <div class="reveal">
+          <h2 class="text-headline-lg">Beyond Work</h2>
+          <div class="vision-card glass-card">
+            <blockquote class="body-lg">"When I'm not studying financial statements or debugging code, you'll find me immersed in cinematic storytelling or meticulously assembling detailed scale models—a practice that keeps my focus on the small details."</blockquote>
+            <div class="hobby-icons"><div class="hobby-icon"><span class="material-symbols-outlined">movie</span></div><div class="hobby-icon"><span class="material-symbols-outlined">precision_manufacturing</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <h2 class="text-display reveal">Let's Build Something Meaningful.</h2>
+        <p class="body-lg reveal">I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+        <div class="socials">
+          <a class="social glass-card reveal" href="https://www.linkedin.com/in/sourish-dutta-b747193b6" target="_blank" rel="noreferrer" aria-label="LinkedIn"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">account_circle</span></a>
+          <a class="social glass-card reveal" href="https://github.com/sourish-dutta-sugo" target="_blank" rel="noreferrer" aria-label="GitHub"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">terminal</span></a>
+          <a class="social glass-card reveal" href="https://www.instagram.com/sugovibes" target="_blank" rel="noreferrer" aria-label="Instagram"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">photo_camera</span></a>
+          <a class="social glass-card reveal" href="mailto:sourishdutta2007@gmail.com" aria-label="Email"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">mail</span></a>
+        </div>
+        <a class="button-secondary reveal" href="mailto:sourishdutta2007@gmail.com">Get In Touch</a>
+      </div>
+      <div class="contact-ambient"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><h2 class="text-headline-md">Sourish Dutta</h2><p class="label">CREATIVE PROBLEM SOLVER</p></div>
+      <div class="footer-right">
+        <div class="footer-links label"><a href="https://www.linkedin.com/in/sourish-dutta-b747193b6" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://github.com/sourish-dutta-sugo" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.instagram.com/sugovibes" target="_blank" rel="noreferrer">Instagram</a><a href="mailto:sourishdutta2007@gmail.com">Email</a></div>
+        <p class="copyright label">© <span id="year"></span> Sourish Dutta. Built with intentionality.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const menuButton = document.getElementById('menuButton');
+    const menuIcon = document.getElementById('menuIcon');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const year = document.getElementById('year');
+
+    year.textContent = new Date().getFullYear();
+
+    const onScroll = () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    menuButton.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuIcon.textContent = open ? 'close' : 'menu';
+    });
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuIcon.textContent = 'menu';
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+    document.querySelectorAll('.reveal').forEach((el, index) => {
+      el.style.transitionDelay = `${Math.min(index % 5, 4) * 70}ms`;
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
