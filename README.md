@@ -1,108 +1,159 @@
 # Personal Portfolio Website
 
-A modern, responsive, and interactive portfolio website built to showcase my skills, projects, experience, and professional journey in technology, data, and development.
+Welcome to my personal portfolio website repository.
 
-The goal of this project is to create a digital identity that represents my work, capabilities, and continuous learning journey.
+This project represents my digital identity and professional journey by showcasing my skills, projects, experience, and interests across technology, development, data, and AI.
+
+The purpose of this portfolio is to create a central platform where people can explore my work, understand my capabilities, and connect with my professional profile.
 
 ---
 
-## 🚀 Features
+# 🚀 About The Project
 
-- Modern and responsive UI design
-- Personal branding and professional introduction
-- Project showcase section
-- Skills and technology stack presentation
-- Interactive user experience
+This portfolio website is designed to present:
+
+- Personal introduction
+- Technical skills
+- Development projects
+- Data analytics work
+- Professional interests
+- Learning journey
+- Future goals
+
+It acts as a continuously evolving platform that grows with my skills and experiences.
+
+---
+
+# ✨ Features
+
+- Modern and responsive design
+- Clean user interface
 - Mobile-friendly layout
-- Clean and maintainable structure
-- Optimized for personal portfolio use
+- Personal branding
+- Project showcase
+- Skills presentation
+- Interactive sections
+- Professional online presence
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Technologies Used
 
-### Frontend
+## Frontend
+
 - HTML5
 - CSS3
 - JavaScript
 
-### Development Tools
+## Development Tools
+
 - Git
 - GitHub
-- VS Code
+- Visual Studio Code
 
-### Other Skills Represented
-- Data Science
+## Areas Represented
+
+- Web Development
+- Data Analytics
 - Artificial Intelligence
-- Excel Automation
-- Accounting Knowledge
-- Tally Prime
-- Vibe Coding / AI-assisted Development
+- Automation
+- Business & Finance Technology
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
+```
 Portfolio-website/
+
 │
 ├── assets/
 ├── css/
 ├── js/
 ├── images/
+│
 ├── index.html
+│
 └── README.md
+```
 
-
-*(Structure may change as the project evolves.)*
+*(Project structure may evolve as improvements are added.)*
 
 ---
 
-## 💻 Run Locally
+# 🎯 Purpose
+
+This website was created to:
+
+- Build a professional online identity
+- Showcase practical projects
+- Demonstrate technical skills
+- Document my learning journey
+- Create a platform for future opportunities
+
+---
+
+# 💻 Running The Project Locally
 
 Clone the repository:
 
 ```bash
 git clone https://github.com/sourish-dutta-sugo/Portfolio-website.git
+```
 
-Open the project folder:
+Move into the project directory:
 
+```bash
 cd Portfolio-website
+```
 
-Run the website by opening:
+Open:
 
+```
 index.html
+```
 
 in your browser.
 
-🎯 Purpose
+---
 
-This portfolio website works as a central platform to:
+# 📈 Future Improvements
 
-Showcase my development projects
-Present my technical and professional skills
-Demonstrate my learning progress
-Build a professional online presence
-👨‍💻 About Me
+Planned updates:
 
-I am Sourish Dutta, a learner and creator combining business knowledge with modern technology.
+- More project case studies
+- Additional animations
+- Improved UI/UX
+- Blog and articles section
+- AI-powered features
+- Interactive project demonstrations
+- Performance optimization
 
-My interests include:
+---
 
-Data Science
-Artificial Intelligence
-Web Development
-Automation
-Finance & Accounting Technology
+# 👨‍💻 About Me
 
-I focus on building practical projects that solve real-world problems.
+I am Sourish Dutta, a learner and creator exploring the combination of:
 
-📌 Future Improvements
-Add more projects
-Improve animations and interactions
-Add blog/articles section
-Add project case studies
-Improve performance optimization
-📄 License
+- Technology
+- Data Analytics
+- Artificial Intelligence
+- Web Development
+- Business & Finance
+
+I enjoy building practical solutions, experimenting with new technologies, and transforming ideas into real-world projects.
+
+---
+
+# 🌐 Connect
+
+GitHub:
+
+https://github.com/sourish-dutta-sugo
+
+---
+
+# 📄 License
 
 This project is created and maintained by Sourish Dutta.
 
